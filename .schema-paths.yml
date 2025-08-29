@@ -1,0 +1,207 @@
+app_group:
+  - read:
+      path: /apps/snow.eda.nokia.com
+      method: GET
+
+patch:
+  - update:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}
+      method: PATCH
+  - update:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}
+      method: PATCH
+  - update:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}
+      method: PATCH
+  - update:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}
+      method: PATCH
+
+resource_history:
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}/_revs
+      method: GET
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}/_revs
+      method: GET
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}/_revs
+      method: GET
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}/_revs
+      method: GET
+
+resource_list:
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1
+      method: GET
+
+resource_topology:
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}/_topology
+      method: GET
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}/_topology
+      method: GET
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}/_topology
+      method: GET
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}/_topology
+      method: GET
+
+status:
+  - delete:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}
+      method: DELETE
+  - delete:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}
+      method: DELETE
+  - delete:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}
+      method: DELETE
+  - delete:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}
+      method: DELETE
+
+ui_result:
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/_ui/{pathname}
+      method: GET
+
+com.nokia.eda.snow.v1alpha1.cluster_incident:
+  - create:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents
+      method: POST
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}
+      method: GET
+  - update:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}
+      method: PUT
+
+com.nokia.eda.snow.v1alpha1.cluster_incident_list:
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents
+      method: GET
+  - delete:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents
+      method: DELETE
+
+com.nokia.eda.snow.v1alpha1.cluster_incident_deleted_resources:
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/_deleted
+      method: GET
+
+com.nokia.eda.snow.v1alpha1.cluster_instance:
+  - create:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances
+      method: POST
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}
+      method: GET
+  - update:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}
+      method: PUT
+
+com.nokia.eda.snow.v1alpha1.cluster_instance_list:
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances
+      method: GET
+  - delete:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances
+      method: DELETE
+
+com.nokia.eda.snow.v1alpha1.cluster_instance_deleted_resources:
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/_deleted
+      method: GET
+
+com.nokia.eda.snow.v1alpha1.incident:
+  - create:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents
+      method: POST
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}
+      method: GET
+  - update:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}
+      method: PUT
+
+com.nokia.eda.snow.v1alpha1.incident_list:
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/incidents
+      method: GET
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents
+      method: GET
+  - delete:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents
+      method: DELETE
+
+com.nokia.eda.snow.v1alpha1.incident_deleted_resources:
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/_deleted
+      method: GET
+
+com.nokia.eda.snow.v1alpha1.instance:
+  - create:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances
+      method: POST
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}
+      method: GET
+  - update:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}
+      method: PUT
+
+com.nokia.eda.snow.v1alpha1.instance_list:
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/instances
+      method: GET
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances
+      method: GET
+  - delete:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances
+      method: DELETE
+
+com.nokia.eda.snow.v1alpha1.instance_deleted_resources:
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/_deleted
+      method: GET
+
+totalPaths: 25
+totalSchemas: 48
+usedSchemas: 19
+unusedSchemas: 29
+unusedSchemaList:
+  - AppGroupVersion
+  - ErrorIndex
+  - ErrorItem
+  - ErrorResponse
+  - K8SPatchOp
+  - OverlayState
+  - Resource
+  - ResourceHistoryEntry
+  - StatusDetails
+  - TopoAttrMetadata
+  - TopoElemMetadata
+  - TopoLinkEndpoint
+  - TopoNodeGrouping
+  - TopoOverlayEndpoint
+  - TopoOverlayEndpointState
+  - TopoOverlayLink
+  - TopoOverlayLinkState
+  - TopoOverlayNode
+  - TopoOverlayNodeState
+  - TopoSchema
+  - Topology
+  - com.nokia.eda.snow.v1alpha1.ClusterIncident_DeletedResourceEntry
+  - com.nokia.eda.snow.v1alpha1.ClusterIncident_metadata
+  - com.nokia.eda.snow.v1alpha1.ClusterInstance_DeletedResourceEntry
+  - com.nokia.eda.snow.v1alpha1.ClusterInstance_metadata
+  - com.nokia.eda.snow.v1alpha1.Incident_DeletedResourceEntry
+  - com.nokia.eda.snow.v1alpha1.Incident_metadata
+  - com.nokia.eda.snow.v1alpha1.Instance_DeletedResourceEntry
+  - com.nokia.eda.snow.v1alpha1.Instance_metadata

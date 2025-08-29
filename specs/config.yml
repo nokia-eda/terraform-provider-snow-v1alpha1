@@ -1,0 +1,110 @@
+provider:
+  name: snow
+
+data_sources:
+  app_group:
+    read:
+      path: /apps/snow.eda.nokia.com
+      method: GET
+
+  cluster_incident:
+    read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}
+      method: GET
+
+  cluster_incident_list:
+    read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents
+      method: GET
+
+  cluster_instance:
+    read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}
+      method: GET
+
+  cluster_instance_list:
+    read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances
+      method: GET
+
+  incident:
+    read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}
+      method: GET
+
+  incident_list:
+    read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents
+      method: GET
+
+  instance:
+    read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}
+      method: GET
+
+  instance_list:
+    read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances
+      method: GET
+
+  resource_list:
+    read:
+      path: /apps/snow.eda.nokia.com/v1alpha1
+      method: GET
+
+resources:
+  cluster_incident:
+    create:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents
+      method: POST
+    read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}
+      method: GET
+    update:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}
+      method: PUT
+    delete:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}
+      method: DELETE
+
+  cluster_instance:
+    create:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances
+      method: POST
+    read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}
+      method: GET
+    update:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}
+      method: PUT
+    delete:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}
+      method: DELETE
+
+  incident:
+    create:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents
+      method: POST
+    read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}
+      method: GET
+    update:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}
+      method: PUT
+    delete:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}
+      method: DELETE
+
+  instance:
+    create:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances
+      method: POST
+    read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}
+      method: GET
+    update:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}
+      method: PUT
+    delete:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}
+      method: DELETE
