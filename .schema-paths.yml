@@ -3,6 +3,34 @@ app_group:
       path: /apps/snow.eda.nokia.com
       method: GET
 
+intent_targets:
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}/_targets
+      method: GET
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}/_targets
+      method: GET
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}/_targets
+      method: GET
+  - read:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}/_targets
+      method: GET
+
+k8_s_topology_request:
+  - create:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}/_topology
+      method: POST
+  - create:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}/_topology
+      method: POST
+  - create:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}/_topology
+      method: POST
+  - create:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}/_topology
+      method: POST
+
 patch:
   - update:
       path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}
@@ -171,37 +199,62 @@ com.nokia.eda.snow.v1alpha1.instance_deleted_resources:
       path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/_deleted
       method: GET
 
-totalPaths: 25
-totalSchemas: 48
-usedSchemas: 19
-unusedSchemas: 29
+totalPaths: 29
+totalSchemas: 75
+usedSchemas: 21
+unusedSchemas: 54
 unusedSchemaList:
   - AppGroupVersion
   - ErrorIndex
   - ErrorItem
   - ErrorResponse
+  - IntentTarget
   - K8SPatchOp
   - OverlayState
   - Resource
   - ResourceHistoryEntry
   - StatusDetails
   - TopoAttrMetadata
+  - TopoAttribute
+  - TopoBoolExpression
+  - TopoBoolLiteral
   - TopoElemMetadata
-  - TopoLinkEndpoint
+  - TopoEndpointBoolExpression
+  - TopoField
+  - TopoFixedBoolExpression
+  - TopoLabelSelector
+  - TopoLiteralStatusOrBadge
+  - TopoLiteralValue
+  - TopoLogicalExpression
   - TopoNodeGrouping
   - TopoOverlayEndpoint
   - TopoOverlayEndpointState
   - TopoOverlayLink
+  - TopoOverlayLinkGroup
+  - TopoOverlayLinkGroupEndpoint
   - TopoOverlayLinkState
   - TopoOverlayNode
+  - TopoOverlayNodeOrGroup
   - TopoOverlayNodeState
+  - TopoOverlayValue
   - TopoSchema
+  - TopoStateFilter
+  - TopoValue
+  - TopoValueExpression
   - Topology
   - com.nokia.eda.snow.v1alpha1.ClusterIncident_DeletedResourceEntry
+  - com.nokia.eda.snow.v1alpha1.ClusterIncident_alarms
+  - com.nokia.eda.snow.v1alpha1.ClusterIncident_deviations
   - com.nokia.eda.snow.v1alpha1.ClusterIncident_metadata
   - com.nokia.eda.snow.v1alpha1.ClusterInstance_DeletedResourceEntry
+  - com.nokia.eda.snow.v1alpha1.ClusterInstance_alarms
+  - com.nokia.eda.snow.v1alpha1.ClusterInstance_deviations
   - com.nokia.eda.snow.v1alpha1.ClusterInstance_metadata
   - com.nokia.eda.snow.v1alpha1.Incident_DeletedResourceEntry
+  - com.nokia.eda.snow.v1alpha1.Incident_alarms
+  - com.nokia.eda.snow.v1alpha1.Incident_deviations
   - com.nokia.eda.snow.v1alpha1.Incident_metadata
   - com.nokia.eda.snow.v1alpha1.Instance_DeletedResourceEntry
+  - com.nokia.eda.snow.v1alpha1.Instance_alarms
+  - com.nokia.eda.snow.v1alpha1.Instance_deviations
   - com.nokia.eda.snow.v1alpha1.Instance_metadata
