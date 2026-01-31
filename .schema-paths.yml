@@ -31,20 +31,6 @@ k8_s_topology_request:
       path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}/_topology
       method: POST
 
-patch:
-  - update:
-      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}
-      method: PATCH
-  - update:
-      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}
-      method: PATCH
-  - update:
-      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}
-      method: PATCH
-  - update:
-      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}
-      method: PATCH
-
 resource_history:
   - read:
       path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}/_revs
@@ -107,6 +93,9 @@ com.nokia.eda.snow.v1alpha1.cluster_incident:
   - update:
       path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}
       method: PUT
+  - update:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}
+      method: PATCH
 
 com.nokia.eda.snow.v1alpha1.cluster_incident_list:
   - read:
@@ -131,6 +120,9 @@ com.nokia.eda.snow.v1alpha1.cluster_instance:
   - update:
       path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}
       method: PUT
+  - update:
+      path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}
+      method: PATCH
 
 com.nokia.eda.snow.v1alpha1.cluster_instance_list:
   - read:
@@ -155,6 +147,9 @@ com.nokia.eda.snow.v1alpha1.incident:
   - update:
       path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}
       method: PUT
+  - update:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}
+      method: PATCH
 
 com.nokia.eda.snow.v1alpha1.incident_list:
   - read:
@@ -182,6 +177,9 @@ com.nokia.eda.snow.v1alpha1.instance:
   - update:
       path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}
       method: PUT
+  - update:
+      path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}
+      method: PATCH
 
 com.nokia.eda.snow.v1alpha1.instance_list:
   - read:
@@ -201,8 +199,8 @@ com.nokia.eda.snow.v1alpha1.instance_deleted_resources:
 
 totalPaths: 29
 totalSchemas: 75
-usedSchemas: 21
-unusedSchemas: 54
+usedSchemas: 20
+unusedSchemas: 55
 unusedSchemaList:
   - AppGroupVersion
   - ErrorIndex
@@ -211,6 +209,7 @@ unusedSchemaList:
   - IntentTarget
   - K8SPatchOp
   - OverlayState
+  - Patch
   - Resource
   - ResourceHistoryEntry
   - StatusDetails

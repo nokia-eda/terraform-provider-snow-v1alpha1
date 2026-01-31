@@ -8,7 +8,7 @@ Path,Method,Schema,Model Name,Supported,Datasource,Resource
 /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/_deleted,GET,com.nokia.eda.snow.v1alpha1.ClusterIncident_DeletedResources,,false,false,false
 /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name},DELETE,Status,cluster_incident,true,false,true
 /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name},GET,com.nokia.eda.snow.v1alpha1.ClusterIncident,cluster_incident,true,true,true
-/apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name},PATCH,Patch,,false,false,false
+/apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name},PATCH,com.nokia.eda.snow.v1alpha1.ClusterIncident,,false,false,false
 /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name},PUT,com.nokia.eda.snow.v1alpha1.ClusterIncident,cluster_incident,true,false,true
 /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}/_revs,GET,ResourceHistory,,false,false,false
 /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}/_targets,GET,IntentTargets,,false,false,false
@@ -20,7 +20,7 @@ Path,Method,Schema,Model Name,Supported,Datasource,Resource
 /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/_deleted,GET,com.nokia.eda.snow.v1alpha1.ClusterInstance_DeletedResources,,false,false,false
 /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name},DELETE,Status,cluster_instance,true,false,true
 /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name},GET,com.nokia.eda.snow.v1alpha1.ClusterInstance,cluster_instance,true,true,true
-/apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name},PATCH,Patch,,false,false,false
+/apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name},PATCH,com.nokia.eda.snow.v1alpha1.ClusterInstance,,false,false,false
 /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name},PUT,com.nokia.eda.snow.v1alpha1.ClusterInstance,cluster_instance,true,false,true
 /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}/_revs,GET,ResourceHistory,,false,false,false
 /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}/_targets,GET,IntentTargets,,false,false,false
@@ -34,7 +34,7 @@ Path,Method,Schema,Model Name,Supported,Datasource,Resource
 /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/_deleted,GET,com.nokia.eda.snow.v1alpha1.Incident_DeletedResources,,false,false,false
 /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name},DELETE,Status,incident,true,false,true
 /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name},GET,com.nokia.eda.snow.v1alpha1.Incident,incident,true,true,true
-/apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name},PATCH,Patch,,false,false,false
+/apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name},PATCH,com.nokia.eda.snow.v1alpha1.Incident,,false,false,false
 /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name},PUT,com.nokia.eda.snow.v1alpha1.Incident,incident,true,false,true
 /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}/_revs,GET,ResourceHistory,,false,false,false
 /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}/_targets,GET,IntentTargets,,false,false,false
@@ -46,7 +46,7 @@ Path,Method,Schema,Model Name,Supported,Datasource,Resource
 /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/_deleted,GET,com.nokia.eda.snow.v1alpha1.Instance_DeletedResources,,false,false,false
 /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name},DELETE,Status,instance,true,false,true
 /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name},GET,com.nokia.eda.snow.v1alpha1.Instance,instance,true,true,true
-/apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name},PATCH,Patch,,false,false,false
+/apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name},PATCH,com.nokia.eda.snow.v1alpha1.Instance,,false,false,false
 /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name},PUT,com.nokia.eda.snow.v1alpha1.Instance,instance,true,false,true
 /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}/_revs,GET,ResourceHistory,,false,false,false
 /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}/_targets,GET,IntentTargets,,false,false,false
