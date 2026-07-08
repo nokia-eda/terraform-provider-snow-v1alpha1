@@ -1,0 +1,63 @@
+datasources:
+  - model_name: app_group
+    oas_endpoint: /apps/snow.eda.nokia.com
+    oas_schema: AppGroup
+  - model_name: resource_list
+    oas_endpoint: /apps/snow.eda.nokia.com/v1alpha1
+    oas_schema: ResourceList
+  - model_name: cluster_incident_list
+    oas_endpoint: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents
+    oas_schema: com.nokia.eda.snow.v1alpha1.ClusterIncidentList
+  - model_name: cluster_incident
+    oas_endpoint: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}
+    oas_schema: com.nokia.eda.snow.v1alpha1.ClusterIncident
+  - model_name: cluster_instance_list
+    oas_endpoint: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances
+    oas_schema: com.nokia.eda.snow.v1alpha1.ClusterInstanceList
+  - model_name: cluster_instance
+    oas_endpoint: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}
+    oas_schema: com.nokia.eda.snow.v1alpha1.ClusterInstance
+  - model_name: incident_list
+    oas_endpoint: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents
+    oas_schema: com.nokia.eda.snow.v1alpha1.IncidentList
+  - model_name: incident
+    oas_endpoint: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}
+    oas_schema: com.nokia.eda.snow.v1alpha1.Incident
+  - model_name: instance_list
+    oas_endpoint: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances
+    oas_schema: com.nokia.eda.snow.v1alpha1.InstanceList
+  - model_name: instance
+    oas_endpoint: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}
+    oas_schema: com.nokia.eda.snow.v1alpha1.Instance
+
+resources:
+  - model_name: cluster_incident
+    oas_endpoint: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents
+    oas_schema: com.nokia.eda.snow.v1alpha1.ClusterIncident
+  - model_name: cluster_instance
+    oas_endpoint: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances
+    oas_schema: com.nokia.eda.snow.v1alpha1.ClusterInstance
+  - model_name: incident
+    oas_endpoint: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents
+    oas_schema: com.nokia.eda.snow.v1alpha1.Incident
+  - model_name: instance
+    oas_endpoint: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances
+    oas_schema: com.nokia.eda.snow.v1alpha1.Instance
+
+qualified:
+  datasources:
+    - oas_schema: IntentTargets
+      get: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}/_targets
+    - oas_schema: ResourceHistory
+      get: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/{name}/_revs
+    - oas_schema: UIResult
+      get: /apps/snow.eda.nokia.com/v1alpha1/_ui/{pathname}
+    - oas_schema: com.nokia.eda.snow.v1alpha1.ClusterIncident_DeletedResources
+      get: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents/_deleted
+    - oas_schema: com.nokia.eda.snow.v1alpha1.ClusterInstance_DeletedResources
+      get: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/_deleted
+    - oas_schema: com.nokia.eda.snow.v1alpha1.Incident_DeletedResources
+      get: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/_deleted
+    - oas_schema: com.nokia.eda.snow.v1alpha1.Instance_DeletedResources
+      get: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/_deleted
+  resources:
