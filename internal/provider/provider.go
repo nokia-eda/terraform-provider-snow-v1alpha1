@@ -266,11 +266,14 @@ func (p *snowProvider) DataSources(ctx context.Context) []func() datasource.Data
 		NewClusterIncidentListDataSource,
 		NewClusterInstanceDataSource,
 		NewClusterInstanceListDataSource,
+		NewCreateIncidentDataSource,
+		NewCreateIncidentListDataSource,
 		NewIncidentDataSource,
 		NewIncidentListDataSource,
 		NewInstanceDataSource,
 		NewInstanceListDataSource,
 		NewResourceListDataSource,
+		NewWorkflowGetInputsRespElemDataSource,
 	}
 }
 
@@ -278,6 +281,7 @@ func (p *snowProvider) Resources(ctx context.Context) []func() resource.Resource
 	return []func() resource.Resource{
 		NewClusterIncidentResource,
 		NewClusterInstanceResource,
+		NewCreateIncidentResource,
 		NewIncidentResource,
 		NewInstanceResource,
 	}

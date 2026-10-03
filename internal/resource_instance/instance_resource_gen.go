@@ -131,11 +131,13 @@ func InstanceResourceSchema(ctx context.Context) schema.Schema {
 					},
 					"retry_count": schema.Int64Attribute{
 						Optional:            true,
+						Computed:            true,
 						Description:         "Number of retries for API requests. Defaults to 0 i.e no retries.",
 						MarkdownDescription: "Number of retries for API requests. Defaults to 0 i.e no retries.",
 					},
 					"retry_interval": schema.StringAttribute{
 						Optional:            true,
+						Computed:            true,
 						Description:         "Interval between retries in case of a failed request",
 						MarkdownDescription: "Interval between retries in case of a failed request",
 					},
@@ -153,6 +155,7 @@ func InstanceResourceSchema(ctx context.Context) schema.Schema {
 					},
 					"version": schema.StringAttribute{
 						Optional:            true,
+						Computed:            true,
 						Description:         "API version to use when connecting to ServiceNow",
 						MarkdownDescription: "API version to use when connecting to ServiceNow",
 					},

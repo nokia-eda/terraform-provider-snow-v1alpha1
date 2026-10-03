@@ -69,6 +69,16 @@ ui_result:
       path: /apps/snow.eda.nokia.com/v1alpha1/_ui/{pathname}
       method: GET
 
+workflow_get_inputs_resp_elem:
+  - read:
+      path: /workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents/{name}/_input
+      method: GET
+
+workflow_input_data:
+  - update:
+      path: /workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents/{name}/_input
+      method: PUT
+
 com.nokia.eda.snow.v1alpha1.cluster_incident:
   - create:
       path: /apps/snow.eda.nokia.com/v1alpha1/clusterincidents
@@ -121,6 +131,19 @@ com.nokia.eda.snow.v1alpha1.cluster_instance_list:
 com.nokia.eda.snow.v1alpha1.cluster_instance_deleted_resources:
   - read:
       path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/_deleted
+      method: GET
+
+com.nokia.eda.snow.v1alpha1.create_incident:
+  - create:
+      path: /workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents
+      method: POST
+  - read:
+      path: /workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents/{name}
+      method: GET
+
+com.nokia.eda.snow.v1alpha1.create_incident_list:
+  - read:
+      path: /workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents
       method: GET
 
 com.nokia.eda.snow.v1alpha1.incident:
@@ -183,10 +206,10 @@ com.nokia.eda.snow.v1alpha1.instance_deleted_resources:
       path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/_deleted
       method: GET
 
-totalPaths: 29
-totalSchemas: 73
-usedSchemas: 19
-unusedSchemas: 54
+totalPaths: 36
+totalSchemas: 82
+usedSchemas: 23
+unusedSchemas: 59
 unusedSchemaList:
   - AppGroupVersion
   - ErrorResponse
@@ -226,6 +249,8 @@ unusedSchemaList:
   - TopoValue
   - TopoValueExpression
   - Topology
+  - WorkflowIdentifier
+  - WorkflowInputDataElem
   - com.nokia.eda.snow.v1alpha1.ClusterIncident_DeletedResourceEntry
   - com.nokia.eda.snow.v1alpha1.ClusterIncident_alarms
   - com.nokia.eda.snow.v1alpha1.ClusterIncident_deviations
@@ -234,6 +259,9 @@ unusedSchemaList:
   - com.nokia.eda.snow.v1alpha1.ClusterInstance_alarms
   - com.nokia.eda.snow.v1alpha1.ClusterInstance_deviations
   - com.nokia.eda.snow.v1alpha1.ClusterInstance_metadata
+  - com.nokia.eda.snow.v1alpha1.CreateIncident_alarms
+  - com.nokia.eda.snow.v1alpha1.CreateIncident_deviations
+  - com.nokia.eda.snow.v1alpha1.CreateIncident_metadata
   - com.nokia.eda.snow.v1alpha1.Incident_DeletedResourceEntry
   - com.nokia.eda.snow.v1alpha1.Incident_alarms
   - com.nokia.eda.snow.v1alpha1.Incident_deviations

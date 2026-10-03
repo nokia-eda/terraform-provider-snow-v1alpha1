@@ -22,7 +22,6 @@ description: |-
 ### Optional
 
 - `hash` (String) resource content will be returned as it was at the time of this git hash
-- `spec` (Attributes) ClusterInstanceSpec defines the desired state of ClusterInstance (see [below for nested schema](#nestedatt--spec))
 
 ### Read-Only
 
@@ -31,22 +30,8 @@ description: |-
 - `deviations` (Attributes) (see [below for nested schema](#nestedatt--deviations))
 - `kind` (String)
 - `metadata` (Attributes) (see [below for nested schema](#nestedatt--metadata))
+- `spec` (Attributes) ClusterInstanceSpec defines the desired state of ClusterInstance (see [below for nested schema](#nestedatt--spec))
 - `status` (Attributes) InstanceStatus defines the observed state of Instance (see [below for nested schema](#nestedatt--status))
-
-<a id="nestedatt--spec"></a>
-### Nested Schema for `spec`
-
-Optional:
-
-- `client_credentials` (String) Reference to a Kubernetes secret containing client credentials
-Secret. It must includes the keys: `client_id`, `client_secret`,
-`username` and `password`.
-- `retry_count` (Number) Number of retries for API requests. Defaults to 0 i.e no retries.
-- `retry_interval` (String) Interval between retries in case of a failed request
-- `timeout` (String) Timeout for API requests to ServiceNow
-- `url` (String) The URL of the ServiceNow instance
-- `version` (String) API version to use when connecting to ServiceNow
-
 
 <a id="nestedatt--alarms"></a>
 ### Nested Schema for `alarms`
@@ -76,6 +61,21 @@ Read-Only:
 - `labels` (Map of String)
 - `name` (String)
 - `namespace` (String)
+
+
+<a id="nestedatt--spec"></a>
+### Nested Schema for `spec`
+
+Read-Only:
+
+- `client_credentials` (String) Reference to a Kubernetes secret containing client credentials
+Secret. It must includes the keys: `client_id`, `client_secret`,
+`username` and `password`.
+- `retry_count` (Number) Number of retries for API requests. Defaults to 0 i.e no retries.
+- `retry_interval` (String) Interval between retries in case of a failed request
+- `timeout` (String) Timeout for API requests to ServiceNow
+- `url` (String) The URL of the ServiceNow instance
+- `version` (String) API version to use when connecting to ServiceNow
 
 
 <a id="nestedatt--status"></a>

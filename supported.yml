@@ -29,6 +29,15 @@ datasources:
   - model_name: instance
     oas_endpoint: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}
     oas_schema: com.nokia.eda.snow.v1alpha1.Instance
+  - model_name: create_incident_list
+    oas_endpoint: /workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents
+    oas_schema: com.nokia.eda.snow.v1alpha1.CreateIncidentList
+  - model_name: create_incident
+    oas_endpoint: /workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents/{name}
+    oas_schema: com.nokia.eda.snow.v1alpha1.CreateIncident
+  - model_name: workflow_get_inputs_resp_elem
+    oas_endpoint: /workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents/{name}/_input
+    oas_schema: WorkflowGetInputsRespElem
 
 resources:
   - model_name: cluster_incident
@@ -43,6 +52,9 @@ resources:
   - model_name: instance
     oas_endpoint: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances
     oas_schema: com.nokia.eda.snow.v1alpha1.Instance
+  - model_name: create_incident
+    oas_endpoint: /workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents
+    oas_schema: com.nokia.eda.snow.v1alpha1.CreateIncident
 
 qualified:
   datasources:

@@ -31,10 +31,6 @@ description: |-
 <a id="nestedatt--items"></a>
 ### Nested Schema for `items`
 
-Optional:
-
-- `spec` (Attributes) ClusterInstanceSpec defines the desired state of ClusterInstance (see [below for nested schema](#nestedatt--items--spec))
-
 Read-Only:
 
 - `alarms` (Attributes) (see [below for nested schema](#nestedatt--items--alarms))
@@ -42,22 +38,8 @@ Read-Only:
 - `deviations` (Attributes) (see [below for nested schema](#nestedatt--items--deviations))
 - `kind` (String)
 - `metadata` (Attributes) (see [below for nested schema](#nestedatt--items--metadata))
+- `spec` (Attributes) ClusterInstanceSpec defines the desired state of ClusterInstance (see [below for nested schema](#nestedatt--items--spec))
 - `status` (Attributes) InstanceStatus defines the observed state of Instance (see [below for nested schema](#nestedatt--items--status))
-
-<a id="nestedatt--items--spec"></a>
-### Nested Schema for `items.spec`
-
-Optional:
-
-- `client_credentials` (String) Reference to a Kubernetes secret containing client credentials
-Secret. It must includes the keys: `client_id`, `client_secret`,
-`username` and `password`.
-- `retry_count` (Number) Number of retries for API requests. Defaults to 0 i.e no retries.
-- `retry_interval` (String) Interval between retries in case of a failed request
-- `timeout` (String) Timeout for API requests to ServiceNow
-- `url` (String) The URL of the ServiceNow instance
-- `version` (String) API version to use when connecting to ServiceNow
-
 
 <a id="nestedatt--items--alarms"></a>
 ### Nested Schema for `items.alarms`
@@ -87,6 +69,21 @@ Read-Only:
 - `labels` (Map of String)
 - `name` (String)
 - `namespace` (String)
+
+
+<a id="nestedatt--items--spec"></a>
+### Nested Schema for `items.spec`
+
+Read-Only:
+
+- `client_credentials` (String) Reference to a Kubernetes secret containing client credentials
+Secret. It must includes the keys: `client_id`, `client_secret`,
+`username` and `password`.
+- `retry_count` (Number) Number of retries for API requests. Defaults to 0 i.e no retries.
+- `retry_interval` (String) Interval between retries in case of a failed request
+- `timeout` (String) Timeout for API requests to ServiceNow
+- `url` (String) The URL of the ServiceNow instance
+- `version` (String) API version to use when connecting to ServiceNow
 
 
 <a id="nestedatt--items--status"></a>

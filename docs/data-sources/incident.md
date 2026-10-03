@@ -23,7 +23,6 @@ description: |-
 ### Optional
 
 - `hash` (String) resource content will be returned as it was at the time of this git hash
-- `spec` (Attributes) IncidentSpec defines the desired state of Incident (see [below for nested schema](#nestedatt--spec))
 
 ### Read-Only
 
@@ -32,73 +31,8 @@ description: |-
 - `deviations` (Attributes) (see [below for nested schema](#nestedatt--deviations))
 - `kind` (String)
 - `metadata` (Attributes) (see [below for nested schema](#nestedatt--metadata))
+- `spec` (Attributes) IncidentSpec defines the desired state of Incident (see [below for nested schema](#nestedatt--spec))
 - `status` (Attributes) IncidentStatus defines the observed state of Incident (see [below for nested schema](#nestedatt--status))
-
-<a id="nestedatt--spec"></a>
-### Nested Schema for `spec`
-
-Optional:
-
-- `description` (String) A short description of the Incident generator
-- `enabled` (Boolean) Indicates if the incident generator is enabled
-- `instance` (List of String) Instances associated with this incident generator
-- `sources` (Attributes) Sources for incident generation (see [below for nested schema](#nestedatt--spec--sources))
-
-<a id="nestedatt--spec--sources"></a>
-### Nested Schema for `spec.sources`
-
-Optional:
-
-- `query` (Attributes) Include a query source in this incident generator (see [below for nested schema](#nestedatt--spec--sources--query))
-
-<a id="nestedatt--spec--sources--query"></a>
-### Nested Schema for `spec.sources.query`
-
-Optional:
-
-- `assigned_to` (String) The individual assigned to resolve the incident (references the User table).
-- `assignment_group` (String) The group responsible for addressing the incident (references the Group table).
-- `auto_resolve` (Boolean) If true this app will automatically resolve the incident when the object is deleted.
-- `caller_id` (String) The user who reported the incident (references the User table).
-- `category` (String) General category of the incident (e.g., Software, Hardware, Network).
-- `close_code` (String) A code indicating how the incident was resolved (e.g., Solved (Workaround), Solved (Permanently)).
-- `close_notes` (String) Notes on how the incident was resolved.
-- `cmdbci` (String) The Configuration Item (CI) associated with the incident,
-linking it to an asset or service in the CMDB (Configuration Management Database).
-- `custom_fields` (Attributes List) List of custom fields to add to the incident (see [below for nested schema](#nestedatt--spec--sources--query--custom_fields))
-- `description` (String) A detailed description of the issue.
-- `fields` (List of String) Fields to include in the subscribe results, which can then be used in the template,
-e.g. '.namespace.node.name' or '.namespace.node.srl.interface.name"'.
-- `impact` (String) Impact level on the organization, usually from 1 (highest) to 3 (lowest).
-- `location` (String) Physical or logical location related to the incident.
-- `priority` (String) Numeric priority of the incident, usually from 1 (highest) to 5 (lowest).
-- `resolution_code` (String) Indicates the type of resolution applied.
-- `short_description` (String) A Go template used to generate a brief summary of the incident
-when raising it in service now.
-The template can use the fields from the subscription results.
-e.g. 'Interface {{.node.srl.interface.name}} is down on node {{.node.name}}'.
-- `state` (String) The current status of the incident, typically represented by codes:
-  1: New
-  2: In Progress
-  3: On Hold
-  4: Resolved
-  6: Closed
-- `sub_category` (String) More specific subcategory within the main category.
-- `table` (String) EDB table to subscribe to. e.g. '.namespace.node.srl.interface'
-- `urgency` (String) Urgency level, typically from 1 (highest) to 5 (lowest).
-- `where` (String) A where clause to use for the subscribe request, e.g: 'oper-state = down'. You can omit enclosing parentheses.
-
-<a id="nestedatt--spec--sources--query--custom_fields"></a>
-### Nested Schema for `spec.sources.query.custom_fields`
-
-Optional:
-
-- `name` (String) Custom field name
-- `value` (String) Custom field value, a Go template
-
-
-
-
 
 <a id="nestedatt--alarms"></a>
 ### Nested Schema for `alarms`
@@ -128,6 +62,73 @@ Read-Only:
 - `labels` (Map of String)
 - `name` (String)
 - `namespace` (String)
+
+
+<a id="nestedatt--spec"></a>
+### Nested Schema for `spec`
+
+Read-Only:
+
+- `description` (String) A short description of the Incident generator
+- `enabled` (Boolean) Indicates if the incident generator is enabled
+- `instance` (List of String) Instances associated with this incident generator
+- `sources` (Attributes) Sources for incident generation (see [below for nested schema](#nestedatt--spec--sources))
+
+<a id="nestedatt--spec--sources"></a>
+### Nested Schema for `spec.sources`
+
+Read-Only:
+
+- `query` (Attributes) Include a query source in this incident generator (see [below for nested schema](#nestedatt--spec--sources--query))
+
+<a id="nestedatt--spec--sources--query"></a>
+### Nested Schema for `spec.sources.query`
+
+Read-Only:
+
+- `assigned_to` (String) The individual assigned to resolve the incident (references the User table).
+- `assignment_group` (String) The group responsible for addressing the incident (references the Group table).
+- `auto_resolve` (Boolean) If true this app will automatically resolve the incident when the object is deleted.
+- `caller_id` (String) The user who reported the incident (references the User table).
+- `category` (String) General category of the incident (e.g., Software, Hardware, Network).
+- `close_code` (String) A code indicating how the incident was resolved (e.g., Solved (Workaround), Solved (Permanently)).
+- `close_notes` (String) Notes on how the incident was resolved.
+- `cmdbci` (String) The Configuration Item (CI) associated with the incident,
+linking it to an asset or service in the CMDB (Configuration Management Database).
+- `custom_fields` (Attributes List) List of custom fields to add to the incident (see [below for nested schema](#nestedatt--spec--sources--query--custom_fields))
+- `description` (String) A detailed description of the issue.
+- `fields` (List of String) Fields to include in the subscribe results, which can then be used in the template,
+e.g. '.namespace.node.name' or '.namespace.node.srl.interface.name"'.
+- `impact` (String) Impact level on the organization, usually from 1 (highest) to 3 (lowest).
+- `location` (String) Physical or logical location related to the incident.
+- `priority` (String) Numeric priority of the incident, usually from 1 (highest) to 5 (lowest).
+- `resolution_code` (String) Indicates the type of resolution applied.
+- `short_description` (String) A Go template used to generate a brief summary of the incident
+when raising it in service now.
+The template can use the fields from the subscription results.
+e.g. 'Interface {{.node.srl.interface.name}} is down on node {{.node.name}}'.
+- `state` (String) The current status of the incident, typically represented by codes:
+  1: New
+  2: In Progress
+  3: On Hold
+  6: Resolved
+  7: Closed
+  8: Canceled
+- `sub_category` (String) More specific subcategory within the main category.
+- `table` (String) EDB table to subscribe to. e.g. '.namespace.node.srl.interface'
+- `urgency` (String) Urgency level, typically from 1 (highest) to 5 (lowest).
+- `where` (String) A where clause to use for the subscribe request, e.g: 'oper-state = down'. You can omit enclosing parentheses.
+
+<a id="nestedatt--spec--sources--query--custom_fields"></a>
+### Nested Schema for `spec.sources.query.custom_fields`
+
+Read-Only:
+
+- `name` (String) Custom field name
+- `value` (String) Custom field value, a Go template
+
+
+
 
 
 <a id="nestedatt--status"></a>

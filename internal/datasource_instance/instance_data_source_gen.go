@@ -102,32 +102,32 @@ func InstanceDataSourceSchema(ctx context.Context) schema.Schema {
 			"spec": schema.SingleNestedAttribute{
 				Attributes: map[string]schema.Attribute{
 					"client_credentials": schema.StringAttribute{
-						Optional:            true,
+						Computed:            true,
 						Description:         "Reference to a Kubernetes secret containing client credentials\nSecret. It must includes the keys: `client_id`, `client_secret`,\n`username` and `password`.",
 						MarkdownDescription: "Reference to a Kubernetes secret containing client credentials\nSecret. It must includes the keys: `client_id`, `client_secret`,\n`username` and `password`.",
 					},
 					"retry_count": schema.Int64Attribute{
-						Optional:            true,
+						Computed:            true,
 						Description:         "Number of retries for API requests. Defaults to 0 i.e no retries.",
 						MarkdownDescription: "Number of retries for API requests. Defaults to 0 i.e no retries.",
 					},
 					"retry_interval": schema.StringAttribute{
-						Optional:            true,
+						Computed:            true,
 						Description:         "Interval between retries in case of a failed request",
 						MarkdownDescription: "Interval between retries in case of a failed request",
 					},
 					"timeout": schema.StringAttribute{
-						Optional:            true,
+						Computed:            true,
 						Description:         "Timeout for API requests to ServiceNow",
 						MarkdownDescription: "Timeout for API requests to ServiceNow",
 					},
 					"url": schema.StringAttribute{
-						Optional:            true,
+						Computed:            true,
 						Description:         "The URL of the ServiceNow instance",
 						MarkdownDescription: "The URL of the ServiceNow instance",
 					},
 					"version": schema.StringAttribute{
-						Optional:            true,
+						Computed:            true,
 						Description:         "API version to use when connecting to ServiceNow",
 						MarkdownDescription: "API version to use when connecting to ServiceNow",
 					},
@@ -137,7 +137,7 @@ func InstanceDataSourceSchema(ctx context.Context) schema.Schema {
 						AttrTypes: SpecValue{}.AttributeTypes(ctx),
 					},
 				},
-				Optional:            true,
+				Computed:            true,
 				Description:         "InstanceSpec defines the desired state of Instance",
 				MarkdownDescription: "InstanceSpec defines the desired state of Instance",
 			},

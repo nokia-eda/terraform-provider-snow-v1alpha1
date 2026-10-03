@@ -93,8 +93,9 @@ e.g. 'Interface {{.node.srl.interface.name}} is down on node {{.node.name}}'.
   1: New
   2: In Progress
   3: On Hold
-  4: Resolved
-  6: Closed
+  6: Resolved
+  7: Closed
+  8: Canceled
 - `sub_category` (String) More specific subcategory within the main category.
 - `table` (String) EDB table to subscribe to. e.g. '.namespace.node.srl.interface'
 - `urgency` (String) Urgency level, typically from 1 (highest) to 5 (lowest).

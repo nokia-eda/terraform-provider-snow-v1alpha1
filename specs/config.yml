@@ -27,6 +27,16 @@ data_sources:
       path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances
       method: GET
 
+  create_incident:
+    read:
+      path: /workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents/{name}
+      method: GET
+
+  create_incident_list:
+    read:
+      path: /workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents
+      method: GET
+
   incident:
     read:
       path: /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/incidents/{name}
@@ -50,6 +60,11 @@ data_sources:
   resource_list:
     read:
       path: /apps/snow.eda.nokia.com/v1alpha1
+      method: GET
+
+  workflow_get_inputs_resp_elem:
+    read:
+      path: /workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents/{name}/_input
       method: GET
 
 resources:
@@ -79,6 +94,17 @@ resources:
       method: PUT
     delete:
       path: /apps/snow.eda.nokia.com/v1alpha1/clusterinstances/{name}
+      method: DELETE
+
+  create_incident:
+    create:
+      path: /workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents
+      method: POST
+    read:
+      path: /workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents/{name}
+      method: GET
+    delete:
+      path: /workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents/{name}
       method: DELETE
 
   incident:

@@ -48,3 +48,13 @@ Path,Method,Schema,Model Name,Supported,Datasource,Resource
 /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}/_revs,GET,ResourceHistory,,false,false,false
 /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}/_targets,GET,IntentTargets,,false,false,false
 /apps/snow.eda.nokia.com/v1alpha1/namespaces/{namespace}/instances/{name}/_topology,POST,K8STopologyRequest,,false,false,false
+/workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents,GET,com.nokia.eda.snow.v1alpha1.CreateIncidentList,create_incident_list,true,true,false
+/workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents,POST,com.nokia.eda.snow.v1alpha1.CreateIncident,create_incident,true,false,true
+/workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents/{name},DELETE,,create_incident,true,false,true
+/workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents/{name},GET,com.nokia.eda.snow.v1alpha1.CreateIncident,create_incident,true,true,true
+/workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents/{name}/_artifacts,GET,,,false,false,false
+/workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents/{name}/_artifacts/{artifact},GET,,,false,false,false
+/workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents/{name}/_input,GET,WorkflowGetInputsRespElem,workflow_get_inputs_resp_elem,true,true,false
+/workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents/{name}/_input,PUT,WorkflowInputData,,false,false,false
+/workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents/{name}/_logs,GET,,,false,false,false
+/workflows/v1/snow.eda.nokia.com/v1alpha1/createincidents/{name}/_terminate,PUT,,,false,false,false
